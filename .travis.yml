@@ -7,8 +7,7 @@ os: linux
     dotnet: 1.0.1
     mono: none
     env: DOTNETCORE=1
-    sudo: required
-  
+    sudo: required  
 addons:  
   apt:
     packages:
