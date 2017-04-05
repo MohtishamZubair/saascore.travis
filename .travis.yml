@@ -1,4 +1,4 @@
-﻿language: csharp
+language: csharp
 sudo: required
 env:  
   - CLI_VERSION=latest
