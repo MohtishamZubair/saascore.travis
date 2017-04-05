@@ -1,4 +1,0 @@
-﻿language: csharp
-solution: SaasCore.sln
-mono: none
-dotnet: 1.0.1
