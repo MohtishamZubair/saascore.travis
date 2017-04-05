@@ -1,4 +1,4 @@
-# saascore.travis
+# saascore.travis [![Build Status](https://travis-ci.org/MohtishamZubair/saascore.travis.svg?branch=master)](https://travis-ci.org/MohtishamZubair/saascore.travis)
 
 for testing with travis
 
