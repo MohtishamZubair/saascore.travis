@@ -1,5 +1,5 @@
 ﻿language: csharp
-solution: SaasCore.sln
+sudo: required
 env:  
   - CLI_VERSION=latest
 os: linux
