@@ -1,0 +1,39 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using SaasCore.Web.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <form asp-area="" asp-controller="Account" asp-action="LogOff" method="post" id="logoutForm" class="navbar-right">
+        <ul class="nav navbar-nav navbar-right">            
+
+            @if (User.IsInRole(SaasCore.Web.Helper.AppConstant.ADMIN_ROLE_NAME))
+            {
+                <li>                    
+                    <a asp-area="" asp-controller="ManageAdmin" asp-action="Users" title="Manage Users">Manage Users</a>
+                </li>
+                <li>                    
+                    <a asp-area="" asp-controller="ManageAdmin" asp-action="Roles" title="Manage Roles">Manage Roles</a>
+                </li>
+                <li>                    
+                    <a asp-area="" asp-controller="ManageAdmin" asp-action="Applications" title="Manage Applications">Manage Applications</a>
+                </li>
+            }
+            <li>
+                <a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">WelCome @UserManager.GetUserName(User)!</a>
+            </li>
+            <li>
+                <button type="submit" class="btn btn-link navbar-btn navbar-link">Log off</button>
+            </li>
+        </ul>
+    </form>
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li><a asp-area="" asp-controller="Account" asp-action="Register">Register</a></li>
+        <li><a asp-area="" asp-controller="Account" asp-action="Login">Log in</a></li>
+    </ul>
+}
